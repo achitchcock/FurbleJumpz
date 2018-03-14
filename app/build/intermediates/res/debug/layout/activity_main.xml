@@ -1,0 +1,7 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/LightSteelBlue"
+    android:id="@+id/frame">
+ 
+</RelativeLayout><!-- From: file:/C:/Users/Aaron/AndroidstudioProjects/FurbleJumpz/app/src/main/res/layout/activity_main.xml -->
