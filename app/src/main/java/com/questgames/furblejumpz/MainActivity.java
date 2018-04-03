@@ -20,7 +20,9 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -32,7 +34,7 @@ public class MainActivity extends Activity {
 	
 	private String TAG  = "Furble";
 	private GestureDetector mGestureDetector;
-	private GroundView ground, ground2, ground3,ground4;
+	private GroundView ground, ground2, ground3,ground4, ground5;
 	private GroundView[] land;
 	
 	
@@ -42,6 +44,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Log.d(TAG,"Entered onCreate");
+
+		Intent mIntent = getIntent();
+		int levelNumber = mIntent.getIntExtra("levelNum", 0);
+		Toast.makeText(MainActivity.this, "" + (levelNumber),
+				Toast.LENGTH_SHORT).show();
+
+		
+		
+		
 		
 		View decorView = getWindow().getDecorView();
 		// Hide the status bar.
@@ -79,8 +90,6 @@ public class MainActivity extends Activity {
 		int count = mFrame.getChildCount();
 		for(int i=0;i<count;i++)
 		{
-			
-			
 			if (mFrame.getChildAt(i) instanceof FurbleView)
 			{
 				FurbleView temp = (FurbleView) mFrame.getChildAt(i);
@@ -88,12 +97,9 @@ public class MainActivity extends Activity {
 				{
 					temp.setJump(true);
 				}
-				
 			}
 		}
-			
 		return false;
-	
 	}
 	
 	@Override
@@ -124,12 +130,18 @@ public class MainActivity extends Activity {
 			ground2 = new GroundView(this.getApplicationContext(),mDisplayWidth+200,0,mGround_a);
 			ground3 = new GroundView(this.getApplicationContext(),mDisplayWidth+530,0,mGround_b);
 			ground4 = new GroundView(this.getApplicationContext(),mDisplayWidth+900 , mDisplayHeight-900,mGround_float);
+			ground5 = new GroundView(this.getApplicationContext(), mDisplayWidth+1400, mDisplayHeight- 1400, mGround_float);
 			mFrame.addView(ground3);
 			mFrame.addView(ground2);
 			mFrame.addView(ground4);
+			mFrame.addView(ground5);
 			mFrame.addView(ground);
+
 			
-			land = new GroundView[] {ground,ground2,ground3,ground4};
+			
+			
+			
+			land = new GroundView[] {ground,ground2,ground3,ground4, ground5};
 		//	mFrame.addView(feet);
 			mFrame.addView(body);
 		}
@@ -450,9 +462,7 @@ private class GroundView extends View{
 		
 		
 		canvas.drawBitmap(mScaledBitmap, mXPos, mYPos, mPainter); 
-		
-		
-		
+
 		//  - restore the canvas
 		canvas.restore();
 		GroundView.this.postInvalidate();
@@ -485,9 +495,11 @@ private class GroundView extends View{
 		mXPos += mDx;
 		if(mXPos < 0-mScaledBitmapWidth)
 		{
+			//ViewGroup parent = (ViewGroup) getParent();
+			//parent.removeView(this);
 			Random r = new Random();
-			int pos = r.nextInt(2)+1;
-			mXPos = mDisplayWidth+(mScaledBitmapWidth);
+			int pos = 1200 - r.nextInt(1800);
+			mXPos = mDisplayWidth+(mScaledBitmapWidth + pos);
 		}
 	}
 	

@@ -180,18 +180,32 @@ public final class R {
     public static final int ground_float=0x7f040005;
     public static final int ground_long=0x7f040006;
     public static final int ic_launcher=0x7f040007;
-    public static final int splash=0x7f040008;
+    public static final int level1=0x7f040008;
+    public static final int level2=0x7f040009;
+    public static final int level3=0x7f04000a;
+    public static final int level4=0x7f04000b;
+    public static final int level5=0x7f04000c;
+    public static final int level6=0x7f04000d;
+    public static final int level7=0x7f04000e;
+    public static final int level8=0x7f04000f;
+    public static final int level9=0x7f040010;
+    public static final int splash=0x7f040011;
   }
   public static final class id {
     public static final int action_settings=0x7f050000;
     public static final int button1=0x7f050001;
     public static final int frame=0x7f050002;
-    public static final int imgLogo=0x7f050003;
+    public static final int imageView2=0x7f050003;
+    public static final int imageView3=0x7f050004;
+    public static final int imgLogo=0x7f050005;
+    public static final int levelGrid=0x7f050006;
+    public static final int textView=0x7f050007;
   }
   public static final class layout {
     public static final int activity_main=0x7f060000;
     public static final int activity_splash=0x7f060001;
     public static final int game_over=0x7f060002;
+    public static final int level_select=0x7f060003;
   }
   public static final class menu {
     public static final int main=0x7f070000;
@@ -202,8 +216,9 @@ public final class R {
     public static final int dummy_button=0x7f080002;
     public static final int dummy_content=0x7f080003;
     public static final int hello_world=0x7f080004;
-    public static final int title_activity_level_select=0x7f080005;
-    public static final int to=0x7f080006;
+    public static final int levelSelectText=0x7f080005;
+    public static final int title_activity_level_select=0x7f080006;
+    public static final int to=0x7f080007;
   }
   public static final class style {
     public static final int AppBaseTheme=0x7f090000;

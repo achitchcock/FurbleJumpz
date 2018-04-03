@@ -9,5 +9,6 @@
     <string name="title_activity_level_select">LevelSelect</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="levelSelectText">Level Select</string>
 
 </resources>
